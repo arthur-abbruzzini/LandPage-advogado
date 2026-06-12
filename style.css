@@ -1,0 +1,610 @@
+/* =====================================================
+   RESET E VARIÁVEIS (Nova Paleta: Azul Imperial & Champagne)
+===================================================== */
+:root {
+    --preto: #0a0f1d;             /* Azul marinho quase preto (fundo dos cards) */
+    --preto-secundario: #050811;    /* Azul da meia-noite profundo (fundo do site) */
+    --cinza: #cbd5e1;               /* Cinza claro azulado para textos */
+    --cinza-escuro: #1e293b;        /* Azul ardósia escuro para bordas */
+    --dourado: #e2b774;             /* Tom Champagne elegante (substituindo o dourado antigo) */
+    --dourado-hover: #c99e5c;       /* Champagne escurecido para o hover */
+    --branco: #ffffff;
+    --font-padrao: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--preto-secundario);
+    color: var(--branco);
+    font-family: var(--font-padrao);
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   HEADER HERO
+===================================================== */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(5, 8, 17, 0.85), rgba(5, 8, 17, 0.85)), url("advogado.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+/* Logo aumentada e ajustada */
+.logo {
+    width: 220px;          /* Aumentada de 140px para 220px */
+    max-width: 100%;       /* Garante que se adapte em telas de celulares */
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--dourado);
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #94a3b8;
+}
+
+.hero-image img {
+    width: 450px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* =====================================================
+   MENU
+===================================================== */
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: var(--preto);
+    border-bottom: 1px solid var(--cinza-escuro);
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color .3s ease;
+}
+
+.menu a:hover {
+    color: var(--dourado);
+}
+
+/* =====================================================
+   SOBRE INICIAL
+===================================================== */
+.sobre {
+    max-width: 1000px;
+    margin: 100px auto;
+    width: 90%;
+    text-align: center;
+}
+
+.sobre h2 {
+    color: var(--dourado);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.sobre h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    color: var(--cinza);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* =====================================================
+   GRID PRINCIPAL (Estatísticas Combinadas)
+===================================================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    max-width: 1200px;
+    margin: 80px auto;
+    width: 95%;
+    background: var(--preto);
+    border: 1px solid var(--cinza-escuro);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-aside {
+    background: var(--dourado);
+    color: var(--preto-secundario);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-row: span 2;
+    position: relative;
+}
+
+.highlight-aside::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--branco);
+}
+
+.highlight-aside h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.highlight-aside p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.stat-article {
+    padding: 40px;
+    border: 0.5px solid var(--cinza-escuro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background .3s, transform .3s;
+}
+
+.stat-article:hover {
+    background: #0f172a;
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--dourado);
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--branco);
+}
+
+.stat-label {
+    color: var(--cinza);
+    line-height: 1.6;
+}
+
+/* =====================================================
+   ÁREAS DE ATUAÇÃO
+===================================================== */
+.areas {
+    max-width: 1200px;
+    margin: 100px auto;
+    width: 95%;
+}
+
+.areas h2 {
+    text-align: center;
+    color: var(--dourado);
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.area-card {
+    background: var(--preto);
+    border: 1px solid var(--cinza-escuro);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform .3s ease, border-color .3s;
+}
+
+.area-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--dourado);
+}
+
+.area-card h3 {
+    color: var(--dourado);
+    margin-bottom: 15px;
+}
+
+.area-card p {
+    color: var(--cinza);
+    line-height: 1.7;
+}
+
+/* =====================================================
+   DIFERENCIAIS
+===================================================== */
+.diferenciais {
+    max-width: 900px;
+    margin: 100px auto;
+    width: 90%;
+    text-align: center;
+}
+
+.diferenciais h2 {
+    color: var(--dourado);
+    margin-bottom: 30px;
+}
+
+.diferenciais ul {
+    list-style: none;
+}
+
+.diferenciais li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: var(--preto);
+    border-left: 4px solid var(--dourado);
+    text-align: left;
+    color: var(--cinza);
+}
+
+/* =====================================================
+   SERVIÇOS
+===================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 80px auto;
+    width: 95%;
+}
+
+.service-card {
+    background: var(--preto);
+    border: 1px solid var(--cinza-escuro);
+    padding: 35px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--dourado);
+    box-shadow: 0 15px 30px rgba(226, 183, 116, 0.05);
+}
+
+.service-card h3 {
+    color: var(--dourado);
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    flex-grow: 1;
+    color: var(--cinza);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* =====================================================
+   BOTÕES GERAIS
+===================================================== */
+.btn-contact,
+.btn-service {
+    transition: transform .3s, background .3s;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-contact {
+    background: var(--preto-secundario);
+    color: var(--branco);
+    padding: 15px 25px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.btn-service {
+    background: var(--dourado);
+    color: var(--preto-secundario);
+    padding: 12px;
+    width: 100%;
+}
+
+.btn-contact:hover,
+.btn-service:hover {
+    transform: translateY(-3px);
+}
+
+.btn-service:hover {
+    background: var(--dourado-hover);
+}
+
+.btn-service::before {
+    content: "⚖ ";
+    margin-right: 5px;
+}
+
+/* =====================================================
+   FORMULÁRIO DE CONTATO
+===================================================== */
+.contact-section {
+    max-width: 700px;
+    margin: 100px auto;
+    width: 95%;
+}
+
+.contact-section h2 {
+    text-align: center;
+    color: var(--dourado);
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    background: var(--preto);
+    border: 1px solid var(--cinza-escuro);
+    color: var(--branco);
+    font-family: var(--font-padrao);
+    outline: none;
+    transition: border-color .3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--dourado);
+}
+
+.contact-form button {
+    background: var(--dourado);
+    color: var(--preto-secundario);
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background .3s;
+}
+
+.contact-form button:hover {
+    background: var(--dourado-hover);
+}
+
+/* =====================================================
+   FOOTER (RODAPÉ)
+===================================================== */
+.site-footer {
+    background: var(--preto);
+    border-top: 1px solid var(--cinza-escuro);
+    margin-top: 100px;
+    padding: 60px 40px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about h3,
+.footer-links h4,
+.footer-contact h4 {
+    color: var(--dourado);
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    color: var(--cinza);
+    line-height: 1.6;
+}
+
+.footer-links ul, 
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-nav li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--cinza);
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.footer-links a:hover {
+    color: var(--dourado);
+}
+
+.footer-contact {
+    font-style: normal;
+    color: var(--cinza);
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    border-top: 1px solid var(--cinza-escuro);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--cinza-escuro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--preto-secundario);
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    border-color: var(--dourado);
+    box-shadow: 0 0 15px rgba(226, 183, 116, 0.2);
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+/* =====================================================
+   ANIMAÇÕES
+===================================================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.highlight-aside,
+.stat-article,
+.service-card,
+.area-card {
+    animation: fadeUp .8s ease;
+    animation-fill-mode: backwards;
+}
+
+/* =====================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+===================================================== */
+@media (max-width: 1024px) {
+    .hero {
+        gap: 30px;
+        padding: 40px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-aside {
+        grid-row: auto;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Reduz levemente a logo em telas pequenas de celular para não quebrar layout */
+    .logo {
+        width: 180px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .areas-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
